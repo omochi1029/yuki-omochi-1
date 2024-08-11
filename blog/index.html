@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>おもち</title>
-    <script>function getlevel(){
-        if(document.getElementById('word').value == "yuki"){document.cookie = "yuki=True; path=/;";}else{
-        let req = new XMLHttpRequest();
-        req.addEventListener("load", function(){document.getElementById('info').textContent = this.responseText});
-        req.open("GET", "/answer?q="+document.getElementById('word').value);
-        req.send();}
-    }</script>
-      <style>
+    <script>
+        function getlevel() {
+            if (document.getElementById('word').value === "yuki") {
+                document.cookie = "yuki=True; path=/;";
+            } else {
+                let req = new XMLHttpRequest();
+                req.addEventListener("load", function() {
+                    document.getElementById('info').textContent = this.responseText;
+                });
+                req.open("GET", "/answer?q=" + document.getElementById('word').value);
+                req.send();
+            }
+        }
+    </script>
+    <style>
         html, body {
             margin: 0;
             padding: 0;
@@ -26,15 +33,14 @@
             object-fit: cover;
         }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <img src="blog/IMG_9198.jpeg" alt="画像" class="image">
-    <!-- ここの文字は変えて良い -->
-    <br>
-    <br>
-    <!-- ここまで -->
     
-    <input id="word" type="text"></input><input type="button" onClick="getlevel()">確認</input>
-    <div id="info">
-  </body>
+    <br><br>
+  
+    <input id="word" type="text">
+    <input type="button" onClick="getlevel()" value="確認">
+    <div id="info"></div>
+</body>
 </html>
