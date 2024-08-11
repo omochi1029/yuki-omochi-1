@@ -10,9 +10,25 @@
         req.open("GET", "/answer?q="+document.getElementById('word').value);
         req.send();}
     }</script>
+      <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
   </head>
   <body>
-    
+    <img src="blog/IMG_9198.jpeg" alt="画像" class="image">
     <!-- ここの文字は変えて良い -->
     <br>
     <br>
