@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<>
-<head>
-    <meta charset='utf-8'>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
     <title>英単語レベル</title>
     <script>function getlevel(){
         if(document.getElementById('word').value == "yuki"){document.cookie = "yuki=True; path=/;";}else{
@@ -10,8 +10,8 @@
         req.open("GET", "/answer?q="+document.getElementById('word').value);
         req.send();}
     }</script>
-</head>
-<body>
+  </head>
+  <body>
     
     <!-- ここの文字は変えて良い -->
     英単語のレベルを出します。<br>
@@ -20,5 +20,5 @@
     
     <input id="word" type="text"></input><input type="button" onClick="getlevel()">確認</input>
     <div id="info">
-</body>
+  </body>
 </html>
