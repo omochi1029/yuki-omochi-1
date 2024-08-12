@@ -10,7 +10,7 @@
             } else {
                 let req = new XMLHttpRequest();
                 req.addEventListener("load", function() {
-                    document.getElementById('info').textContent = this.responseText
+                    document.getElementById('info').textContent = this.responseText;
                 });
                 req.open("GET", "/answer?q=" + document.getElementById('word').value);
                 req.send();
@@ -32,7 +32,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -41,9 +40,9 @@
             color: #333;
             z-index: 1;
             position: absolute;
-            top: 20px; /* Adjust the top position as needed */
-            left: 20px; /* Adjust the left position as needed */
-            text-align: left; /* Align text to the left */
+            top: 20px; /* テストの上下をここで位置を調整 */
+            left: 20px; /* テキストの右左をここで位置を調整 */
+            text-align: left;
         }
         .image {
             position: absolute;
@@ -60,8 +59,8 @@
 <body>
     <div class="container">
         <div class="text">
-            <input id="word" type="text"><input type="button" onClick="getlevel()" value="英単語を検索">
             
+            <input id="word" type="text"><input type="button" onClick="getlevel()" value="英単語を検索">
         </div>
         <img src="IMG_9198.jpeg" alt="画像" class="image">
     </div>
