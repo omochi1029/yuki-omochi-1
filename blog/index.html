@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <title>英単語辞典</title>
     <script>
-        function getlevel(){
-        if(document.getElementById('word').value == "yuki"){document.cookie = "yuki=True; path=/;";}else{
-        let req = new XMLHttpRequest();
-        req.addEventListener("load", function(){document.getElementById('info').textContent = this.responseText});
-        req.open("GET", "/answer?q="+document.getElementById('word').value);
-        req.send();}
-    }
+        function getlevel() {
+            if (document.getElementById('word').value == "yuki") {
+                document.cookie = "yuki=True; path=/;";
+            } else {
+                let req = new XMLHttpRequest();
+                req.addEventListener("load", function() {
+                    document.getElementById('info').textContent = this.responseText
+                });
+                req.open("GET", "/answer?q=" + document.getElementById('word').value);
+                req.send();
+            }
+        }
     </script>
     <style>
         html, body {
@@ -25,7 +30,6 @@
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -36,6 +40,10 @@
             font-size: 24px;
             color: #333;
             z-index: 1;
+            position: absolute;
+            top: 20px; /* Adjust the top position as needed */
+            left: 20px; /* Adjust the left position as needed */
+            text-align: left; /* Align text to the left */
         }
         .image {
             position: absolute;
@@ -45,15 +53,15 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            opacity: 1; 
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <input id="word" type="text"></input><input type="button" onClick="getlevel()">英単語を検索</input>
     <div class="container">
         <div class="text">
-            <div id="info">
+            <input id="word" type="text"><input type="button" onClick="getlevel()" value="英単語を検索">
+            
         </div>
         <img src="IMG_9198.jpeg" alt="画像" class="image">
     </div>
